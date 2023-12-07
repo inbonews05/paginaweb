@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar vendedor</title>
+    <link rel="icon" href="http://127.0.0.1:1000/static/IMG/VR1.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <h2>Editar vendedor</h2>
+
+    <form action="{{ url_for('editar_vendedor', id_vendedor=vendedor._id) }}" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="nombre_casa">Nombre</label>
+            <input type="text" name="nuevo_nombre"class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="descripcion">Apellido Paterno</label>
+            <input type="text" name="nuevo_apellidoP"  class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="imagen">Apellido Materno </label>
+            <input type="text" name="nuevo_apellidoM" class="form-control-file">
+        </div>
+        <div class="form-group">
+            <label for="nombre_casa">Teléfono</label>
+            <input type="text" name="nuevo_telefono"class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="descripcion">Email</label>
+            <input type="text" name="nuevo_email"  class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="imagen">Contraseña</label>
+            <input type="text" name="nueva_contrasena" class="form-control-file">
+        </div>
+        <div class="form-group">
+            <label for="nombre_casa">Usuario</label>
+            <input type="text" name="nuevo_usuario"  class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="descripcion">Condiciones</label>
+            <input type="text" name="nuevas_condiciones" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    </form>
+</div>
+
+</body>
+</html>

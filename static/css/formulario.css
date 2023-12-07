@@ -1,0 +1,148 @@
+/* formulario.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+button{
+    color: white;
+    background-color: rgb(152, 152, 226);
+}
+
+.formulario {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.campo input[type="file"] {
+    padding: 5px;
+}
+
+button[type="submit"] {
+    background-color: rgb(43, 52, 226);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: rgb(43, 52, 226);
+}
+
+/* Estilos para el formulario */
+
+ 
+
+ 
+
+form {
+    max-width: 800px; /* Aumenta el ancho del formulario */
+    margin: auto;
+    padding: 30px; /* Aumenta el espacio interno */
+    border: 1px solid #accc;
+    border-radius: 15px; /* Redondea los bordes */
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+
+}
+
+ 
+
+form h2 {
+    margin-bottom: 20px;
+    font-size: 24px; /* Aumenta el tamaño de la fuente */
+}
+
+ 
+
+form select,
+
+form textarea,
+
+form input[type="text"] {
+    width: 100%;
+    padding: 15px; /* Aumenta el espacio interno */
+    margin-bottom: 20px; /* Aumenta el margen inferior */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px; /* Aumenta el tamaño de la fuente */
+
+}
+
+ 
+
+form select {
+    appearance: none;
+    background: url('https://image.flaticon.com/icons/png/512/149/149071.png') no-repeat right center;
+    background-size: 20px;
+}
+
+ 
+
+form select::-ms-expand {
+    display: none;
+}
+
+ 
+
+form button[type="submit"],
+
+form a {
+    padding: 15px 30px; /* Aumenta el espacio interno */
+    border: none;
+    border-radius: 10px;
+    background-color: #f5f5f5; /* Un color entre blanco hueso y blanco */
+    color: #333; /* Un tono de gris oscuro */
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 20px; /* Aumenta el margen superior */
+    font-size: 16px; /* Aumenta el tamaño de la fuente */
+
+}
+
+ 
+
+form button[type="submit"]:hover,
+form a:hover {
+    background-color: #e0e0e0; /* Un color un poco más oscuro al pasar el ratón */
+}

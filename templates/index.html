@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+        <title>Foraneos</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+        <link rel="icon" href="http://127.0.0.1:1000/static/IMG/VR1.png" type="image/x-icon">
+</head>
+<body>
+
+    <header>
+    <div class="container">
+            <img src="http://127.0.0.1:1000/static/IMG/VR1.png" alt="" width="70px">
+            <p class="logo">Foraneos</p>
+            <nav>
+                <a href="/maquiladoras">Maquiladoras</a>
+                <a href="/lugares_turisticos">Lugares turísticos</a>
+                <a href="/acerca_nosotros">Acerca de nosotros</a>
+                <a href="/guia">Guía</a> 
+                <a href="/sesion">Iniciar sesión</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Listo para un<br>nuevo hogar</h1>
+        <button><a href="/registro">Registrarse</a></button>
+    </section>
+
+    <section class="nuestros-programas">
+        <div class="container">
+            <h2>Listado de casas</h2>
+            <div class="programas" id="contenedorCasas">
+                {% for casa in casas %}
+                    <div class="carta">
+                        <img src="{{ casa.imagen }}" style="height: 170px;">
+                        <h3>{{ casa.nombre_casa }}</h3>
+                        <p>{{ casa.descripcion }}</p>
+                    </div>
+                {% endfor %} 
+            </div>
+            
+
+        </div>
+
+    </section>
+
+    <div class="container-footer">	
+
+        <footer>
+            <div class="logo-footer">
+                <img src="" alt="">
+            </div>
+
+            <div class="redes-footer">
+                <a href="https://www.facebook.com/profile.php?id=61550544126932"><i class="fab fa-facebook-f icon-redes-footer"></i></a>
+                <a href="https://www.instagram.com/v_rrrr31/?fbclid=IwAR3ke6yh-4dVPWMezhMo4cFFPYhfe1Pjx8FdnkbSORdfoaht0fPt5RbntfY"><i class="fab fa-instagram icon-redes-footer"></i></a>
+            </div>
+
+            <hr>
+            <h4>© 2023 Foraneos - Todos los Derechos Reservados</h4>
+
+        </footer>
+
+    </div>
+</body>
+</html>

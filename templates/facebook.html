@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Publicaciones</title>
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos_blog.css') }}">
+    <link rel="icon" href="http://127.0.0.1:1000/static/IMG/VR1.png" type="image/x-icon">
+</head>
+<body>
+    <!--Header - menu-->
+
+    <header>
+        <div class="container">
+            <img src="http://127.0.0.1:1000/static/IMG/VR1.png" alt="" width="70px">
+            <p class="logo">Foraneos</p>
+            <nav>
+                <a href="/">Regresar</a>
+                <a href="/registro">Registrarse</a>
+            </nav>
+        </div>
+
+    </header>
+
+<!--Portada-->
+
+    <div class="container-all" id="move-content">
+
+        
+        <div class="container-cover">
+            <div class="container-info-cover">
+                <p>A través de este apartado, se mostraran publicaciones de nuestro facebook.</p>
+            </div>
+        </div>
+
+
+  <div class="container-content">
+    <div id="facebook-feed"></div>
+  </div>
+
+  <!-- Fin de tu contenido HTML -->
+
+  <script>
+    // Reemplaza 'YOUR_ACCESS_TOKEN' con tu token de acceso
+    const accessToken = 'YOUR_ACCESS_TOKEN';
+
+    // Reemplaza 'PAGE_ID' con la ID de tu página de Facebook
+    const pageId = 'PAGE_ID';
+
+    // URL de la API de Facebook Graph
+    const apiUrl = `https://graph.facebook.com/v12.0/${pageId}/posts?access_token=${accessToken}&limit=100`;
+
+    // Función para obtener y mostrar las publicaciones
+    async function getFacebookFeed() {
+      try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        // Verifica si hay datos y procesa las publicaciones
+        if (data.data && data.data.length > 0) {
+          const feedContainer = document.getElementById('facebook-feed');
+
+          data.data.forEach(post => {
+            const postElement = document.createElement('div');
+            postElement.innerHTML = `
+              <p>${post.message}</p>
+              <p>${post.created_time}</p>
+            `;
+            feedContainer.appendChild(postElement);
+          });
+        } else {
+          console.error('No se encontraron publicaciones.');
+        }
+      } catch (error) {
+        console.error('Error al obtener las publicaciones:', error);
+      }
+    }
+
+    // Llama a la función para obtener y mostrar las publicaciones
+    getFacebookFeed();
+  </script>
+
+  <!-- Tu código JavaScript y HTML continúa aquí -->
+
+</body>
+</html>
